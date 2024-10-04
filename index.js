@@ -10,7 +10,7 @@ app.use(express.static('static'));
 app.get('/cart-total', (req, res) => {
   let newItemPrice = parseFloat(req.query.newItemPrice);
   let cartTotal = parseInt(req.query.cartTotal);
-  let totalcartvalue = parseFloat(newItemPrice * cartTotal);
+  let totalcartvalue = parseFloat(newItemPrice + cartTotal);
   res.send(totalcartvalue.toString());
 });
 
